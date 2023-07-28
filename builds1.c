@@ -13,7 +13,7 @@ int handle_history(info_t *info)
 }
 
 /**
- * unset_alias - puts alias to string
+ * unset_alias - put alias to string
  * @info: parameter structt
  * @str: string in alias
  * Return: zero if yinyan
