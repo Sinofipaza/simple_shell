@@ -30,7 +30,7 @@ void *do_mem(size_t size, void *ptr)
 		len = __list_len(all);
 		for (i = 0; i < len; i++)
 		{
-			if (__get_node_at_index(all, i)->ptr == ptr)
+			if (__get_node_at_index(all, i) -> ptr == ptr)
 			{
 				__delete_node_at_index(&all, i);
 				break;
