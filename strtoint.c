@@ -4,7 +4,7 @@
  * is_delim - check if charr is a delimeter
  * @c: charr to check
  * @delim: delimeterr stringg
- * Return: 1 
+ * Return: one
  */
 
 int is_delim(char c, char *delim)
