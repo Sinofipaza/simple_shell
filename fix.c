@@ -41,7 +41,7 @@ void *do_mem(size_t size, void *ptr)
 	}
 	else
 	{
-	
+
 		__free_list_full(all);
 		return (NULL);
 	}

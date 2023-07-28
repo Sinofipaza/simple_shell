@@ -5,7 +5,7 @@
 
 
 /**
- * linum - get line 
+ * linum - get line
  * @add: if not zero, add this amt
  * Return: line number
  */
@@ -116,5 +116,5 @@ int main(int argc, char **argv, char **envp)
 	main_loop(filename);
 
 	/* clean up */
-  return (0);
+	return (0);
 }
