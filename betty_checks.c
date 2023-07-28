@@ -10,5 +10,6 @@ int _getchar(void)
 {
 	char c;
 
-	return (read(0, &c, 1) == 1 ? (unsigned char) c : E0F);
+	return (read(0, &c, 1) == 1 ? (unsigned char) c : EOF);
+	
 }
