@@ -3,7 +3,7 @@
 
 /**
  *_getchar - gets character
- *Return: character
+ *Return: int value or E0F
  */
 
 int _getchar(void)
