@@ -28,7 +28,7 @@ char **_strtok(char *str, char *delim)
 
 	char **list = NULL;
 
-	while(!(count = word_count(str, delim)))
+	while (!(count = word_count(str, delim)))
 		return (NULL);
 	list = do_mem((count + 1) * sizeof(char *), NULL);
 	if (!list)
@@ -36,19 +36,31 @@ char **_strtok(char *str, char *delim)
 
 	for (i = 0, len = 0, count = 0; str[i] || len;)
 	{
-		if (((str[i] == delim[d]) || (!str[i])))
+		for (d = 0, check = 0; delim[d]; d++)
 		{
-			check += 1;
-			if (len)
+			if (((str[i] == delim[d]) || (!str[i])))
 			{
-				list[count] = do_mem(sizeof(char) * (len + 1), NULL;
-				if (!list[count])
+				check += 1;
+				if (len)
 				{
-					_free(list, count);
-					return (NULL);
+					list[count] = do_mem(sizeof(char) * (len + 1), NULL;
+					if (!list[count])
+					{
+						_free(list, count);
+						return (NULL);
+					}
+					for (j = 0; len; len--, j++)
+						list[count][j] = str[i - len];
+					list[count][j] = '\0';
+					count++;
 				}
-				for (j = 0; len; len--, j++)
-					list[count][j] = str[i - len];
-				list[count][j] = '\0';
-				count++;
 			}
+		}
+		if (!check)
+			len++;
+		if (str[i])
+			i++;
+	}
+	list[count] = NULL;
+	return (list);
+}
